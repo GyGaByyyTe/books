@@ -1,14 +1,15 @@
-import {useEffect, useState} from "react";
-import {Book} from "../types.ts";
-import axios from "axios";
 import BooksList from "./BooksList.tsx";
+import useBooks from "./useBooks.ts";
 
 const BookListContainer = () => {
-    const [books, setBooks] = useState<Book[]>([]);
+    const {loading, error, books} = useBooks()
 
-    useEffect(() => {
-        axios.get('http://localhost:8080/books').then(res => setBooks(res.data));
-    }, [])
+    // if(loading) {
+    //   return <p>Loading...</p>
+    // }
+    // if(error) {
+    //   return <p>Error...</p>
+    // }
 
     return <BooksList books={books}/>
 }

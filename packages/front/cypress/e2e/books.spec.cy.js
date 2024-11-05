@@ -13,7 +13,9 @@ describe('Books application', function () {
             {'title': 'Refactoring', 'id': 1},
             {'title': 'Domain-driven design', 'id': 2},
             {'title': 'Building Microservices', 'id': 3}]
-        return cy.wrap(books.map(item => axios.post('http://localhost:8080/books', item, {headers: {'Content-Type': 'application/json'}})))
+        for (const item of books){
+             axios.post('http://localhost:8080/books', item, {headers: {'Content-Type': 'application/json'}})
+        }
     })
 
     afterEach(() => {
