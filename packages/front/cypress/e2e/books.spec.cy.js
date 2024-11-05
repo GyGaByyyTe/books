@@ -9,7 +9,10 @@ describe('Books application', function () {
     });
 
     beforeEach(() => {
-        const books = [{'title': 'Refactoring', 'id': 1}, {'title': 'Domain-driven design', 'id': 2}]
+        const books = [
+            {'title': 'Refactoring', 'id': 1},
+            {'title': 'Domain-driven design', 'id': 2},
+            {'title': 'Building Microservices', 'id': 3}]
         return cy.wrap(books.map(item => axios.post('http://localhost:8080/books', item, {headers: {'Content-Type': 'application/json'}})))
     })
 
@@ -28,9 +31,9 @@ describe('Books application', function () {
         cy.visit('http://localhost:3000/');
         cy.get('div[data-test="book-list"]').should('exist');
         cy.get('div.book-item').should((books) => {
-            expect(books).to.have.length(2);
+            expect(books).to.have.length(3);
             const titles = [...books].map(book => book.querySelector('h2').innerHTML);
-            expect(titles).to.deep.equal(['Refactoring', 'Domain-driven design']);
+            expect(titles).to.deep.equal(['Refactoring', 'Domain-driven design','Building Microservices']);
         })
     })
 })
