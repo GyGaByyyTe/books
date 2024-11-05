@@ -1,0 +1,9 @@
+{
+  "name": "@pnpm-monorepo/server",
+  "scripts": {
+    "start": "json-server --watch ./db.json --port 8080"
+  },
+  "devDependencies": {
+    "json-server": "0.17.3"
+  }
+}
