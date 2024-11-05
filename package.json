@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "pnpm --filter server start"
+    "serve": "pnpm --filter server start",
+    "dev": "pnpm --filter front dev",
+    "e2e": "pnpm --filter front e2e"
   },
   "keywords": [],
   "author": "",
