@@ -4,6 +4,23 @@ import BookList from './BooksList';
 import {Book} from "../types.ts";
 
 describe('BookList', () => {
+    it('loading', () => {
+        const props = {
+            loading: true
+        };
+        const {container} = render(<BookList {...props} />);
+        const content = container.querySelector('p');
+        expect(content.innerHTML).toContain('Loading');
+    });
+
+    it('error', () => {
+        const props = {
+            error: true
+        };
+        const {container} = render(<BookList {...props} />);
+        const content = container.querySelector('p');
+        expect(content.innerHTML).toContain('Error');
+    });
     it('render books', async () => {
         const props:{
             books:Book[]

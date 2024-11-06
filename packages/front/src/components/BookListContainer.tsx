@@ -4,14 +4,8 @@ import useBooks from "./useBooks.ts";
 const BookListContainer = () => {
     const {loading, error, books} = useBooks()
 
-    // if(loading) {
-    //   return <p>Loading...</p>
-    // }
-    // if(error) {
-    //   return <p>Error...</p>
-    // }
 
-    return <BooksList books={books}/>
+    return <BooksList loading={loading} error={error} books={books}/>
 }
 
 export default BookListContainer;
