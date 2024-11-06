@@ -9,7 +9,7 @@ describe('BookList', () => {
             loading: true
         };
         const {container} = render(<BookList {...props} />);
-        const content = container.querySelector('p');
+        const content = container.querySelector('p') as HTMLParagraphElement;
         expect(content.innerHTML).toContain('Loading');
     });
 
@@ -18,7 +18,7 @@ describe('BookList', () => {
             error: true
         };
         const {container} = render(<BookList {...props} />);
-        const content = container.querySelector('p');
+        const content = container.querySelector('p') as HTMLParagraphElement;
         expect(content.innerHTML).toContain('Error');
     });
     it('render books', async () => {
