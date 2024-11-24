@@ -1,12 +1,10 @@
 import useBookDetails from "./useBookDetails.ts";
+import BookDetails from "./BookDetails.tsx";
 
 const BookDetailsContainer = () => {
     const {book} = useBookDetails()
 
-
-    return <div className="detail">
-        <h2 className="book-title">{book && book.title}</h2>
-    </div>
+    return <BookDetails book={book}/>
 }
 
 export default BookDetailsContainer;

@@ -25,7 +25,7 @@ describe('BookList', () => {
         const props: {
             loading: boolean, error: boolean, books: Book[]
         } = {
-            loading: true,
+            loading: false,
             error: false,
             books: [{'title': 'Refactoring', 'id': 1}, {'title': 'Domain-driven design', 'id': 2},]
         };
