@@ -1,5 +1,6 @@
 import {Book} from "../../types.ts";
 import BookItem from "./Book.tsx";
+import {Grid2 as Grid} from "@mui/material";
 
 const BooksList = ({loading, error, books}: { loading: boolean, error: boolean, books: Book[] }) => {
     if (loading) {
@@ -11,7 +12,9 @@ const BooksList = ({loading, error, books}: { loading: boolean, error: boolean, 
     }
 
     return <div data-test="book-list">
-        {books.map((book) => <BookItem key={book.id} title={book.title} id={book.id}/>)}
+        <Grid container spacing={2}>
+            {books.map((book) => <BookItem key={book.id} title={book.title} id={book.id}/>)}
+        </Grid>
     </div>;
 }
 

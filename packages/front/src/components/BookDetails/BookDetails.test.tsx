@@ -25,4 +25,14 @@ describe('BookDetails', () => {
         const description = screen.getByText(props.book.description as string);
         expect(description).toBeInTheDocument();
     })
+    it('displays the book name when no description is provided', () => {
+        const props: { book: Book } = {
+            book: {
+                'id': 1, 'title': 'Refactoring'
+            }
+        };
+        render(<BookDetails {...props} />);
+        const description = screen.getByTestId('book-description');
+        expect(description).toHaveTextContent(props.book.title);
+    })
 });
