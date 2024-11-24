@@ -1,4 +1,4 @@
-import {Book} from "../types.ts";
+import {Book} from "../../types.ts";
 import BookItem from "./Book.tsx";
 
 const BooksList = ({loading, error, books}: { loading: boolean, error: boolean, books: Book[] }) => {

@@ -1,8 +1,8 @@
 import {describe, expect, it} from 'vitest'
 import {screen} from '@testing-library/react';
-import BookList from './BooksList';
-import {Book} from "../types.ts";
-import {renderWithRouter} from "../utils.tsx";
+import BookList from './BooksList.tsx';
+import {Book} from "../../types.ts";
+import {renderWithRouter} from "../../utils.tsx";
 
 
 describe('BookList', () => {

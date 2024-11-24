@@ -1,4 +1,4 @@
-import {Book} from "../types.ts";
+import {Book} from "../../types.ts";
 
 const BookItem = ({title, id}: Book) => {
     return (<div className="book-item">

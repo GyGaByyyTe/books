@@ -1,7 +1,7 @@
 import {Route, Routes} from 'react-router-dom';
 import {Typography} from "@mui/material";
-import BookListContainer from "./components/BookListContainer.tsx";
-import BookDetailsContainer from "./components/BookDetailsContainer.tsx";
+import BookListContainer from "./components/BookList/BookListContainer.tsx";
+import BookDetailsContainer from "./components/BookDetails/BookDetailsContainer.tsx";
 
 function App() {
     return (<>

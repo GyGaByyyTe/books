@@ -1,4 +1,4 @@
-import {Book} from "../types.ts";
+import {Book} from "../../types.ts";
 import {useEffect, useState} from "react";
 import axios from "axios";
 

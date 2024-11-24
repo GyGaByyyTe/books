@@ -1,7 +1,7 @@
 import {describe, expect, it} from 'vitest'
 import {render, screen} from '@testing-library/react';
-import BookDetails from './BookDetails';
-import {Book} from "../types.ts";
+import BookDetails from './BookDetails.tsx';
+import {Book} from "../../types.ts";
 
 describe('BookDetails', () => {
     it('render title', async () => {
