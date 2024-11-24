@@ -11,7 +11,7 @@ const BooksList = ({loading, error, books}: { loading: boolean, error: boolean, 
     }
 
     return <div data-test="book-list">
-        {books.map((book) => <BookItem key={book.title} title={book.title}/>)}
+        {books.map((book) => <BookItem key={book.id} title={book.title} id={book.id}/>)}
     </div>;
 }
 

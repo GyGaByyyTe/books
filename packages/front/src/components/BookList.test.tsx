@@ -6,7 +6,7 @@ import {Book} from "../types.ts";
 describe('BookList', () => {
     it('loading', () => {
         const props = {
-            loading: true
+            loading: true, error: false, books: []
         };
         const {container} = render(<BookList {...props} />);
         const content = container.querySelector('p') as HTMLParagraphElement;
@@ -15,16 +15,18 @@ describe('BookList', () => {
 
     it('error', () => {
         const props = {
-            error: true
+            loading: false, error: true, books: []
         };
         const {container} = render(<BookList {...props} />);
         const content = container.querySelector('p') as HTMLParagraphElement;
         expect(content.innerHTML).toContain('Error');
     });
     it('render books', async () => {
-        const props:{
-            books:Book[]
+        const props: {
+            loading: boolean, error: boolean, books: Book[]
         } = {
+            loading: true,
+            error: false,
             books: [{'title': 'Refactoring', 'id': 1}, {'title': 'Domain-driven design', 'id': 2},]
         };
         render(<BookList {...props} />);
