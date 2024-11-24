@@ -1,1 +1,1 @@
-export type Book = { title: string, id?: number }
+export type Book = { title: string, description?: string, id?: number }
